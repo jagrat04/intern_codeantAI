@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import AppLayout from "./applayout"
+import AppLayout from "./applayout.jsx"
 import Repositories from "./components/repositories"
 import { useState } from "react"
 import { menuContext } from "./contexts/menu"
