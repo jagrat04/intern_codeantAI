@@ -4,15 +4,15 @@ export default function Auth() {
   const [activeTab, setActiveTab] = useState("saas");
 
   const saasOptions = [
-    { img: "/github.png", text: "Sign in with Github", onClick: "/dashboard" },
-    { img: "/bitbucket.png", text: "Sign in with Bitbucket", onClick: "/dashboard" },
-    { img: "/azure.png", text: "Sign in with Azure DevOps", onClick: "/dashboard" },
-    { img: "/gitlab.png", text: "Sign in with Gitlab", onClick: "/dashboard" },
+    { img: "/github.png", text: "Sign in with Github", onClick: "/Dashboard" },
+    { img: "/bitbucket.png", text: "Sign in with Bitbucket", onClick: "/Dashboard" },
+    { img: "/azure.png", text: "Sign in with Azure DevOps", onClick: "/Dashboard" },
+    { img: "/gitlab.png", text: "Sign in with Gitlab", onClick: "/Dashboard" },
   ];
 
   const selfHostedOptions = [
-    { img: "/gitlab.png", text: "Self Hosted GitLab", onClick: "/dashboard" },
-    { img: "/key.png", text: "Sign in With SSO ", onClick: "/dashboard" },
+    { img: "/gitlab.png", text: "Self Hosted GitLab", onClick: "/Dashboard" },
+    { img: "/key.png", text: "Sign in With SSO ", onClick: "/Dashboard" },
   ];
   const renderOptions = (options: any[]) =>
     options.map((option) => (
