@@ -1,38 +1,44 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Auth from './components/auth';
-import Repository from "./components/repositories";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AppLayout from "./applayout";
+import Repositories from "./components/repositories";
+import { useState } from "react";
+import { menuContext } from "./contexts/menu";
+import Auth from "./components/auth";
 import Sidebar from "./components/sidebar";
-import Home from "./components/home";
 
-export default function App() {
-  const [state, setState] = useState(false); // Define the state if it's not defined yet
-  
+function App() {
+  const [state, set] = useState(false);
+  const router = createBrowserRouter([
+    {
+      path: "/Dashboard",
+      element: (
+        <>
+          <div className="flex flex-col md:flex-row ">
+            <Sidebar />
+            <div
+              className={`absolute w-full md:relative md:w-[88%] md:top-0 top-[5rem] ${
+                state && "md:blur-none blur-sm"
+              }`}
+            >
+              <Repositories />
+            </div>
+          </div>
+        </>
+      ),
+    },
+    {
+      path: "/",
+      element: <Auth />
+    },
+  ]);
+
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Auth />} />
-        
-        {/* Dashboard Route */}
-        <Route
-          path="/Dashboard"
-          element={
-            <>
-              <div className="flex flex-col md:flex-row">
-                <Sidebar />
-                <div
-                  className={`w-full md:relative md:w-[88%] md:top-0 top-[5rem] ${
-                    state && "md:blur-none blur-sm"
-                  }`}
-                >
-                  <Repository />
-                </div>
-              </div>
-            </>
-          }
-        />
-        
-      </Routes>
-    </Router>
+    <>
+      <menuContext.Provider value={{ state, set }}>
+        <RouterProvider router={router}></RouterProvider>
+      </menuContext.Provider>
+    </>
   );
 }
+
+export default App;
