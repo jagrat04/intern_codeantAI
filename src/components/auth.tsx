@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 export default function Auth() {
   const [activeTab, setActiveTab] = useState("saas");
@@ -14,7 +14,7 @@ export default function Auth() {
     { img: "/gitlab.png", text: "Self Hosted GitLab", onClick: "/dashboard" },
     { img: "/key.png", text: "Sign in With SSO ", onClick: "/dashboard" },
   ];
-  const renderOptions = (options) =>
+  const renderOptions = (options: any[]) =>
     options.map((option) => (
       <button
         key={option.text}
