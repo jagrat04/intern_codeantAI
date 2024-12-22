@@ -1,5 +1,4 @@
 import { ReactElement, useContext } from "react";
-import "../index.css";
 import { menuContext } from "../contexts/menu";
 import { NavLink } from "react-router-dom";
 import { AiOutlineHome } from "react-icons/ai";
