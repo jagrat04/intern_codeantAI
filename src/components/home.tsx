@@ -1,9 +1,15 @@
+import Repositories from "./repositories";
+import Sidebar from "./sidebar";
+
+
 function Home(){
     return (
         <div>
-        <h1>Home</h1>
-        <p>Welcome to the home page</p>
+        
+        <Sidebar /> 
+        <Repositories/>
         </div>
+        
     )
 }
 

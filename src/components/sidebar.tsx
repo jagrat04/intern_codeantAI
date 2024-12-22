@@ -13,27 +13,27 @@ const data = [
   {
     img: <AiOutlineHome />,
     text: "Repositories",
-    onClick: "/app/repositories",
+    onClick: "/Dashboard",
   },
   {
     img: <FaCode />,
     text: "AI Code Review",
-    onClick: "/app/code-review",
+    onClick: "/",
   },
   {
     img: <CiCloudOn />,
     text: "Cloud Security",
-    onClick: "/app/cloud-security",
+    onClick: "/",
   },
   {
     img: <LuBookText />,
     text: "How to use",
-    onClick: "/app/how-to-use",
+    onClick: "/",
   },
   {
     img: <BsGear />,
     text: "Setings",
-    onClick: "/app/settings",
+    onClick: "/",
   },
 ];
 
@@ -42,14 +42,15 @@ function Sidebar() {
   console.log(state);
   return (
     <div
-      className={`pl-2 pt-5 z-[999] bg-white flex flex-col border-b-[1px] fixed md:relative
-       border-gray-500 md:justify-between md:items-start overflow-hidden transition-all ease-linear duration-200 ${
-        state ? "h-[32rem]" : "h-[5rem]"
-      } md:h-[100vh] w-full md:w-[18%]`}
-    >
-      <div className="flex flex-col gap-4 md:gap-8 items-center mr-2 w-full md:hidden">
-        <div className="flex flex-row justify-between w-full">
-          <div className="flex flex-row items-center justify-center font-[inter] text-3xl font-light gap-2">
+    className={`pl-2 pt-5 z-[999] bg-white flex flex-col border-b-[1px] fixed md:relative
+         border-gray-500 md:justify-between md:items-start overflow-hidden transition-all ease-linear duration-200 ${
+           state ? "h-[32rem]" : "h-[5rem]"
+         } md:h-[100vh] w-full md:w-[242px]`}
+    style={{ padding: "unset" }}
+  >
+      <div className="flex flex-col gap-4 md:gap-8 items-center mr-2 w-full md:hidden " style={{ padding: "16px" , margin: "unset" }} >
+        <div className="flex flex-row justify-between w-full" style={{ padding: "16px" , margin: "unset" }}>
+          <div className="flex flex-row items-center justify-center font-[inter] text-3xl font-light gap-2" style={{ padding: "16px" , margin: "unset" }}>
             <img src="/Group 37110.png" alt="" />
             <p>CodeAnt AI</p>
           </div>
@@ -69,7 +70,7 @@ function Sidebar() {
           ))}
         </div>
       </div>
-      <div className="md:flex flex-col gap-8 justify-start mr-2 hidden">
+      <div className="md:flex flex-col gap-8 justify-start mr-2 hidden" style={{ padding: "16px" , margin: "unset" }}>
         <div className="flex flex-row items-center justify-center font-[inter] text-3xl font-light gap-2">
           <img src="/Group 37110.png" alt="" />
           <p>CodeAnt AI</p>
@@ -86,9 +87,9 @@ function Sidebar() {
           ))}
         </div>
       </div>
-      <div className="flex flex-col gap-2 md:gap-4 mt-2 md:mt-8 ">
-        <Tab img={<LuPhone />} text="report" onClick="/app/report" />
-        <Tab img={<MdOutlineLogout />} text="logout" onClick="/auth/saas" />
+      <div className="flex flex-col gap-2 md:gap-4 mt-2 md:mt-8 " style={{ padding: "16px" , margin: "unset" }}>
+        <Tab img={<LuPhone />} text="Report" onClick="/" />
+        <Tab img={<MdOutlineLogout />} text="Logout" onClick="/" />
       </div>
     </div>
   );
@@ -120,7 +121,7 @@ function Tab({
     >
       <div className="text-xl">{img}</div>
 
-      <p>{text}</p>
+      <p className="text-md font-semibold">{text}</p>
     </NavLink>
   );
 }

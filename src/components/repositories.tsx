@@ -61,12 +61,12 @@ function Repositories() {
               <h1 className="text-2xl font-semibold">Repositories</h1>
               <p className="text-gray-500">33 total repositories</p>
             </div>
-            <div className="flex flex-row gap-4 text-md">
-              <button className="flex flex-row gap-3 h-max rounded-lg p-2 border-[2px] border-gray-300 items-center justify-start">
+            <div className="flex flex-row gap-4 text-md px-[24px]" >
+              <button className="flex flex-row gap-3 h-max rounded-lg p-3 border-[2px] border-gray-300 items-center justify-start">
                 <img src="/refresh.png" alt="" />
                 Refresh All
               </button>
-              <button className="flex flex-row gap-2 h-max rounded-lg p-2 bg-[#1470ef] text-white items-center justify-start">
+              <button className="flex flex-row gap-2 h-max rounded-lg p-3 bg-[#1470ef] text-white items-center justify-start">
                 <img src="/plus.png" alt="" />
                 Add Repository
               </button>
